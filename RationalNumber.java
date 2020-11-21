@@ -95,6 +95,11 @@ public class RationalNumber extends RealNumber
     int Old_Nume = numerator;
     numerator = numerator / gcd(numerator, denominator);
     denominator = denominator / gcd(Old_Nume, denominator);
+    if (denominator < 0)
+    {
+      numerator = numerator * -1 ;
+      denominator = denominator * -1;
+    }
   }
   /******************Operations Return a new RationalNumber!!!!****************/
   /**
@@ -121,7 +126,7 @@ public class RationalNumber extends RealNumber
   *Return a new RationalNumber that is the sum of this and the other
   */
   public RationalNumber add(RationalNumber other){
-    int New_Nume = numerator * other.getDenominator() + (other.getNumerator * denominator);
+    int New_Nume = numerator * other.getDenominator() + (other.getNumerator() * denominator);
     int New_Deno = denominator * other.getDenominator();
     RationalNumber Return_Value = new RationalNumber(New_Nume, New_Deno);
     return Return_Value;
@@ -130,8 +135,8 @@ public class RationalNumber extends RealNumber
   *Return a new RationalNumber that this minus the other
   */
   public RationalNumber subtract(RationalNumber other){
-    int New_Nume = numerator - other.getNumerator();
-    int New_Deno = denominator - other.getDenominator();
+    int New_Nume = numerator * other.getDenominator() - (other.getNumerator() * denominator);
+    int New_Deno = denominator * other.getDenominator();
     RationalNumber Return_Value = new RationalNumber(New_Nume, New_Deno);
     return Return_Value;
   }
