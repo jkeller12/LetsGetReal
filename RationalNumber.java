@@ -10,36 +10,55 @@ public class RationalNumber extends RealNumber
   */
   public RationalNumber(int nume, int deno){
     super(0.0);//this value is ignored!
+    if (deno < 0)
+    {
+      denominator = -1 * deno;
+      numerator = -1 * nume;
+    }
+    else if (deno == 0)
+    {
+      denominator = 1;
+      numerator = 0 ;
+    }
+    else{
+      numerator = nume;
+      denominator = deno;
+    }
   }
 
   public double getValue(){
-    return 0.0;
+    double Value = numerator / denominator;
+    return Value;
+
+
   }
 
   /**
   *@return the numerator
   */
   public int getNumerator(){
-    return 0;
+    return numerator;
   }
   /**
   *@return the denominator
   */
   public int getDenominator(){
-    return 0;
+
+    return denominator;
   }
   /**
   *@return a new RationalNumber that has the same numerator
   *and denominator as this RationalNumber but reversed.
   */
   public RationalNumber reciprocal(){
-    return null;
+    RationalNumber Return_Value = new RationalNumber(denominator,  numerator);
+    return Return_Value;
   }
   /**
   *@return true when the RationalNumbers have the same numerators and denominators, false otherwise.
   */
   public boolean equals(RationalNumber other){
-    return false;
+    return other.getNumerator() == numerator && other.getDenominator() == denominator;
   }
 
 
@@ -47,18 +66,25 @@ public class RationalNumber extends RealNumber
   *@return the value expressed as "3/4" or "8/3"
   */
   public String toString(){
-    return "0";
+    return "" + numerator + "/" + denominator;
   }
 
   /**Calculate the GCD of two integers.
-  *@param a the first integers
+  *@param a the first integer
   *@param b the second integer
   *@return the value of the GCD
   */
   private static int gcd(int a, int b){
     /*use euclids method or a better one*/
     http://sites.math.rutgers.edu/~greenfie/gs2004/euclid.html
-    return 0;
+
+    if (b == 0)
+    {
+      return a;
+    }
+    else{
+      return gcd(b, a % b);
+    }
   }
 
   /**
