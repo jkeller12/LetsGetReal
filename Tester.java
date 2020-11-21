@@ -136,7 +136,7 @@ public class Tester {
             RationalNumber num = new RationalNumber(rand, rand1);
             RationalNumber other = new RationalNumber(rand*2, rand1*2);
             RationalNumber other1 = new RationalNumber(rand2, rand3);
-            check(test, num.equals(other), false);
+            check(test, num.equals(other), true);
             check(test, num.equals(other1), false);
         } catch(RuntimeException e) {
             except(test, e);
@@ -151,7 +151,8 @@ public class Tester {
         } catch(RuntimeException e) {
             except(test, e);
         }
-/*
+
+
         test = "RationalNumber.reduce()";
         try {
             RationalNumber num = new RationalNumber(210, 45);
@@ -159,7 +160,7 @@ public class Tester {
         } catch(RuntimeException e) {
             except(test, e);
         }
-
+/*
         test = "RationalNumber.multiply(RationalNumber other)";
         try {
             RationalNumber num = new RationalNumber(21, 65);
