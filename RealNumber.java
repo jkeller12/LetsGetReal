@@ -71,7 +71,7 @@ public class RealNumber{
   */
   public RealNumber subtract(RealNumber other){
     double Difference = ( value - other.getValue());
-    RealNumber Return_Value = new RealNumber(Difference);
-    return Return_Value;
+    RealNumber Return_Value1 = new RealNumber(Difference);
+    return Return_Value1;
   }
 }
