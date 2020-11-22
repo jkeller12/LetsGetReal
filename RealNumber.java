@@ -21,8 +21,8 @@ public class RealNumber{
   */
   public boolean equals(RealNumber other){
 
-    final double EPSILON = ((value*.001)/100 +
-                            (other.getValue()*.001)/100)/2;
+    final double EPSILON = Math.abs(((value*.001)/100 +
+                            (other.getValue()*.001)/100)/2);
     if (other.getValue() == 0.0 && value == 0.0)
     {
       return true;
