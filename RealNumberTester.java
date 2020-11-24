@@ -73,7 +73,7 @@ public class RealNumberTester {
       } else {
         failure = true;
         System.out.println("a.equals(b)");
-        errorMessage(test, Boolean.toString(expectedEvals[test]), Boolean.toString(b.equals(a)));
+        errorMessage(test, Boolean.toString(expectedEvals[test]), Boolean.toString(a.equals(b)));
       }
       if (expectedEvals[test] == b.equals(a)) {
         //System.out.println("b.equals(a)");
@@ -203,7 +203,7 @@ public class RealNumberTester {
       } else {
         failure = true;
         System.out.println("a1.subtract(b1)");
-        errorMessage(test, expectedAMinusB.toString(), a1.subtract(b1).toString());
+        errorMessage(test, (a - b) + "", a1.subtract(b1).toString());
       }
       if (b1.subtract(a1).equals(expectedBMinusA)) {
         //System.out.println("b1.subtract(a1)");
@@ -211,7 +211,7 @@ public class RealNumberTester {
       } else {
         failure = true;
         System.out.println("b1.subtract(a1)");
-        errorMessage(test, expectedBMinusA.toString(), b1.subtract(a1).toString());
+        errorMessage(test, (b - a) + "", b1.subtract(a1).toString());
       }
     }
 
